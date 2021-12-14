@@ -3,6 +3,12 @@ _Psyche_ is a fork of [_Pysche Engine_](https://github.com/ShadowMario/FNF-Psych
 
 _Pysche_ is intended to work as a layer above _Psyche Engine_, keeping backwards-compatibility while adding new features and functionality for modders and players.
 
+#### Planned Features
+* Haxe hot-loading --- no more do you have to deal with Lua's limitations!
+* Event-based system allowing for easy modifications to be applied to almost anything (needs to be manually implemented, will take time).
+* A polished, optimized code-base; enjoy the pros without the cons.
+* Genuine documentation --- what's a GitHub wiki?
+
 ### Psych Engine
 The engine originally used as a base for the [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier modding alternative for those that are unfamiliar with Haxe.
 
