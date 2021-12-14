@@ -9,6 +9,9 @@ _Pysche_ is intended to work as a layer above _Psyche Engine_, keeping backwards
 * A polished, optimized code-base; enjoy the pros without the cons.
 * Genuine documentation --- what's a GitHub wiki?
 
+#### Why a fork? Why not just make a pull request?
+I've been waiting nearly two months for a pull request as simple as one that changes a couple compilation flags (see: ShadowMario/FNF-PsychEngine#700). I do not want to endure Shadow Mario's PR process. In addition to that, I also have my own design philosophies and nitpicks (some of which are not compatible with Shadow Mario's), and am less tolerant of 9-year-olds on my repositories.
+
 ### Psych Engine
 The engine originally used as a base for the [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier modding alternative for those that are unfamiliar with Haxe.
 
