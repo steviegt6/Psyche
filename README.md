@@ -37,10 +37,9 @@ LuaJIT can be installed by running `haxelib install linc_luajit` in your favorit
 ### Psych Engine Special Thanks
 * shubs - New Input System
 * SqirraRNG - Chart Editor's Sound Waveform base code
-* Delay/Combo Menu Song Composer + Dialogue Sounds
+* iFlicky - Delay/Combo Menu Song Composer + Dialogue Sounds
 * PolybiusProxy - .MP4 Loader Extension
 * Keoiki - Note Splash Animations
-* iFlicky - Composer of Combo Offset/Note Delay menu
 _____________________________________
 
 # Psyche Features
