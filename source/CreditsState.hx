@@ -65,7 +65,9 @@ class CreditsState extends MusicBeatState
 		}
 		#end
 
-		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color,
+			['Psyche Team'],
+			['Tomat',               'tomat',            'Main Programmer of Psyche',                            'https://twitter.com/TheTomatophile',   'D66766'],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'FFDD33'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',					'https://twitter.com/river_oaken',		'C30085'],
