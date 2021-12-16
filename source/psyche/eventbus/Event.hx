@@ -1,6 +1,6 @@
 package psyche.eventbus;
 
-class Event {
+abstract class Event {
     public function new() {
     }
 }
