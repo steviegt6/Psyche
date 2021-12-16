@@ -1,26 +1,28 @@
 package psyche.eventbus;
 
+using Std;
+
 class EventBus {
-    private var map:Map<Class<Dynamic>, List<Dynamic -> Void>> = new Map<Class<Dynamic>, List<Dynamic -> Void>>();
+    private var map:Map<String, Array<Dynamic -> Void>> = [];
 
     public function new() {
     }
 
-    public function dispatch(event:Event, eventClass:Class<Dynamic>):Void {
-        if (!map.exists(eventClass)) {
+    public function dispatch(event:Event, eventClass:Class<Event>):Void {
+        if (!map.exists(Type.getClassName(eventClass))) {
             return;
         }
 
-        for (listener in map[eventClass]) {
+        for (listener in map[Type.getClassName(eventClass)]) {
             listener(event);
         }
     }
 
-    public function listen(eventClass:Class<Dynamic>, listener:Dynamic -> Void) {
-        if (!map.exists(eventClass)) {
-            map[eventClass] = new List<Dynamic -> Void>();
+    public function listen(eventClass:Class<Event>, listener:Dynamic -> Void) {
+        if (!map.exists(Type.getClassName(eventClass))) {
+            map[Type.getClassName(eventClass)] = [];
         }
 
-        map[eventClass].push(listener);
+        map[Type.getClassName(eventClass)].push(listener);
     }
 }

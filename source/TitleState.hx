@@ -1,5 +1,6 @@
 package;
 
+import psyche.eventbus.events.tests.TitleScreenCreateTestEvent;
 import psyche.Psyche;
 #if desktop
 import Discord.DiscordClient;
@@ -202,6 +203,8 @@ class TitleState extends MusicBeatState
 			});
 		}
 		#end
+
+		Psyche.PsycheEventBus.dispatch(new TitleScreenCreateTestEvent(), TitleScreenCreateTestEvent);
 	}
 
 	var logoBl:FlxSprite;
