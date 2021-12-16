@@ -1,0 +1,5 @@
+package psyche;
+
+class Psyche {
+    
+}
