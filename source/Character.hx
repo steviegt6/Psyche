@@ -73,7 +73,6 @@ class Character extends FlxSprite
 	public var noAntialiasing:Bool = false;
 	public var originalFlipX:Bool = false;
 	public var healthColorArray:Array<Int> = [255, 0, 0];
-	public var alreadyLoaded:Bool = true; //Used by "Change Character" event
 
 	public static var DEFAULT_CHARACTER:String = 'bf'; //In case a character is missing, it will use BF on its place
 	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false)
@@ -119,8 +118,9 @@ class Character extends FlxSprite
 
 				var json:CharacterFile = cast Json.parse(rawJson);
 				#if MODS_ALLOWED
+				var modTxtToFind:String = Paths.modsTxt(json.image);
 				var txtToFind:String = Paths.getPath('images/' + json.image + '.txt', TEXT);
-				if(FileSystem.exists(txtToFind) || Assets.exists(txtToFind))
+				if(FileSystem.exists(modTxtToFind) || FileSystem.exists(txtToFind) || Assets.exists(txtToFind))
 				#else
 				if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT)))
 				#end
