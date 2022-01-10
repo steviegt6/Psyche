@@ -2,7 +2,6 @@ package psyche;
 
 import openfl.text.TextFormat;
 import openfl.text.TextField;
-import haxe.Timer;
 
 class PsycheFpsDisplay extends TextField {
     private var recentTimes:Array<FpsCache> = [];
