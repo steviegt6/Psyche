@@ -26,12 +26,13 @@ class FlashingState extends MusicBeatState
 
 		var warnTextDisplay:Array<String> = [
 			"Hey, watch out!",
-			"Psyche has effects that can induce epileptic seizures!",
-			"These effects include flashing lights.",
+			"Psyche has effects that may induce epileptic seizures!",
+			"Notably flashing lights.",
+			"While rare, a select few people are susceptible.",
 			"Press ENTER to disable them now.",
 			"Press ESCAPE to ignore this message.",
 			"This can be enabled and disabled in the options menu.",
-			"You've been warned!"
+			"You've been warned! Proceed with caution."
 		];
 
 		warnText = new FlxText(0, 0, FlxG.width, PsycheUtils.combineStrings(warnTextDisplay, "\n"), 32);

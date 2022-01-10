@@ -587,20 +587,24 @@ class TitleState extends MusicBeatState
 			switch (sickBeats)
 			{
 				case 1:
-					#if PSYCH_WATERMARKS
+					createCoolText(['Psyche by'], 15);
+					/*#if PSYCH_WATERMARKS
 					createCoolText(['Psych Engine by'], 15);
 					#else
 					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-					#end
+					#end*/
 				// credTextShit.visible = true;
 				case 3:
-					#if PSYCH_WATERMARKS
+					addMoreText('Tomat', 15);
+					addMoreText('and the', 15);
+					addMoreText('Psych devs', 15);
+					/*#if PSYCH_WATERMARKS
 					addMoreText('Shadow Mario', 15);
 					addMoreText('RiverOaken', 15);
 					addMoreText('bb-panzu', 15);
 					#else
 					addMoreText('present');
-					#end
+					#end*/
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
 				case 4:
@@ -609,11 +613,11 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
 				case 5:
-					#if PSYCH_WATERMARKS
+					//#if PSYCH_WATERMARKS
 					createCoolText(['Not associated', 'with'], -40);
-					#else
-					createCoolText(['In association', 'with'], -40);
-					#end
+					//#else
+					//createCoolText(['In association', 'with'], -40);
+					//#end
 				case 7:
 					addMoreText('newgrounds', -40);
 					ngSpr.visible = true;
