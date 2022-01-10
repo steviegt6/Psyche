@@ -3,6 +3,7 @@ package;
 import openfl.display.FPS;
 import flixel.group.FlxGroup;
 import psyche.PsycheFpsDisplay;
+import flixel.graphics.FlxGraphic;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
@@ -10,6 +11,7 @@ import openfl.Assets;
 import openfl.Lib;
 import openfl.display.Sprite;
 import openfl.events.Event;
+import openfl.display.StageScaleMode;
 
 class Main extends Sprite
 {
@@ -70,8 +72,11 @@ class Main extends Sprite
 		#if !debug
 		initialState = TitleState;
 		#end
-
+	
 		ClientPrefs.loadDefaultKeys();
+		// fuck you, persistent caching stays ON during sex
+		FlxGraphic.defaultPersist = true;
+		// the reason for this is we're going to be handling our own cache smartly
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
@@ -79,6 +84,9 @@ class Main extends Sprite
 
 		addChild(fpsVar);
 
+		Lib.current.stage.align = "tl";
+		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
+		
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}

@@ -40,6 +40,7 @@ LuaJIT can be installed by running `haxelib install linc_luajit` in your favorit
 * iFlicky - Delay/Combo Menu Song Composer + Dialogue Sounds
 * PolybiusProxy - .MP4 Loader Extension
 * Keoiki - Note Splash Animations
+* Smokey - Spritemap Texture Atlas support
 _____________________________________
 
 # Psyche Features
