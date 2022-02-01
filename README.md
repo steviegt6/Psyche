@@ -1,18 +1,15 @@
 # Psyche
-_Psyche_ is a fork of [_Pysche Engine_](https://github.com/ShadowMario/FNF-PsychEngine) with polished and more consistent code, as well as safer multi-OS compiliation and an expanded featureset.
+_Psyche_ is a fork of [_Pysch Engine_](https://github.com/ShadowMario/FNF-PsychEngine) that focuses on extensibility and maintainability. The projet's goal is to produce a cleaner, easier-to-use, faster, and more powerful engine. A side goal is full OS parity (Windows and \*Nix operating systems should work fine together).
 
-_Pysche_ is intended to work as a layer above _Psyche Engine_, keeping backwards-compatibility while adding new features and functionality for modders and players.
+_Pysche_ is is intended to build upon _Psych Engine_, keeping backwards-compatibility while adding new features and functionality for modders and players. Lua support will not be maintained past whatever is added to _Psych Engine_. Forks that clean up and add features may be merged after some discussion.
 
-#### Planned Features
-* Haxe hot-loading --- no more do you have to deal with Lua's limitations!
-* Event-based system allowing for easy modifications to be applied to almost anything (needs to be manually implemented, will take time).
-* A polished, optimized code-base; enjoy the pros without the cons.
-* Genuine documentation --- what's a GitHub wiki?
+## Planned Features
+See the [planned features](PSYCHE.md) document.
 
-#### Why a fork? Why not just make a pull request?
-I've been waiting nearly two months for a pull request as simple as one that changes a couple compilation flags (see: ShadowMario/FNF-PsychEngine#700). I do not want to endure Shadow Mario's PR process. In addition to that, I also have my own design philosophies and nitpicks (some of which are not compatible with Shadow Mario's), and am less tolerant of 9-year-olds on my repositories.
+## Why an independent fork? Why not just make a pull request?
+I've been waiting nearly two months for a pull request as simple as one that changes a couple compilation flags (see: ShadowMario/FNF-PsychEngine#700). I do not want to endure Shadow Mario's PR process. In addition to that, I also have my own design philosophies and nitpicks that should not interfere with the development of _Psych Engine_, and am less tolerant of 9-year-olds on my repositories.
 
-### Psych Engine
+# Psych Engine
 The engine originally used as a base for the [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier modding alternative for those that are unfamiliar with Haxe.
 
 ## Building:
