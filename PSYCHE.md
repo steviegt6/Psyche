@@ -1,10 +1,9 @@
-# Fast & Furious Presents: Kellog’s: Final the Official Psyche To-Do List of Back-Burner Throways All-Stars 2: Electron Boogaloo: Return of the Jedi & Knuckles - Featuring Dante From the Devil May Cry Series (Requires a Nintendo WI-FI Connection) [Parental Advistory - Explicit Content]; Only for the Gameboy Color.
+# Psyche TO-DOs & Plans
 
 To see specific details, scroll down to individual headers which detail plans.
 
 * Package refactoring.
 * EventBus and dependency injection-driven code.
-* Object-oriented design philosophy with a data-driven approach when possible
 * Extensive codebase refactoring.
 * Revamped asset system.
 * Haxe Hotloading
@@ -12,21 +11,23 @@ To see specific details, scroll down to individual headers which detail plans.
 # Package Refactoring
 Everything should preferably be in the base "`fnf`" package, and then receive further organization from there. This helps with understanding the code base.
 
-# EventBusses, Dependency Injection, and You
-EventBusses are a great way to remove hard-coded and messy conditionals and the such. Instead, you can simply subscribe to an EventBus which will dispatch events to you when applicable. This lets you entirely avoid every having to touch any code directly, and lets you work from a mod environment while still being able to manipulate practically anything.
+* ~~Move all relevant packages to the base `fnf` package.~~ Done.
+* Further categorize packages. In progress.
 
-Alongside EventBusses are dependency injection, which will be heaviliy facilitated for your own objects. This lets you create your own usable implementations of what would normally be standard FNF objects.
+# Event Busses, Dependency Injection, and You
+The `EventBus` model is a great way to allow objecs (functions) to clearly communicate and modify incoming objects as needed. This opens up powerful, dynamic modding capabilities.
 
-# OOP Philosophy
-Currently, FNF is *very* OOP, but not in the good way. This is basically an extension of EventBusses and Dep. Injection. OOP is a wonderful thing, but only if done well.
+* ~~Implement an EventBus system.~~ Done.
+* Modify existing code to accomodate the EventBus system. In progress.
+* Incorporate dependency injection. Not started.
 
-**This mainly serves as a reminder for me, ignore this.**
+[Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) is an OOP technique that allows a user to create more dynamic objects with less hard-coded components. This should be used alongside `EventBus`ses.
 
 # Codebase Refactoring
-Current code sucks balls, refactor, clean up, and document everything.
+Current code sucks balls, refactor, clean up, and document everything. Rewriting entire components may be required at times, and this should be done with `EventBus`ses in mind, for maximum capabilities. ModChart potential should also expand exponentially.
 
 # Asset System
-The new asset system is cool, but it won't play nice with my plans for mod loading. I'll need to revamp it and give each mod its very own asset repository that it can use, which will be capable of queueing files for loading, and hopefully permit spectacular loading screends - and then some.
+The new asset system is cool, but it won't play nice with my plans for mod loading. Hard-coded paths and weird, inconsistent directory searching is \*blegh\* as well. I'll need to revamp it and give each mod its very own asset repository that it can use, which will be capable of queueing files for loading, and hopefully permit spectacular loading screens and other fun stuff. Asynchrnous loading on a separate thread should also be investigated.
 
 # Haxe Hotloading
 I hate Lua. I just do. Hotloading Haxe through mods is a much more capable approach, and will allow me to move the base FNF game to its very own mod as well, hopefully decoupling things as much as possible!
