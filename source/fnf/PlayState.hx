@@ -50,7 +50,7 @@ import fnf.editors.ChartingState;
 import fnf.editors.CharacterEditorState;
 import flixel.group.FlxSpriteGroup;
 import flixel.input.keyboard.FlxKey;
-import Note.EventNote;
+import fnf.Note.EventNote;
 import openfl.events.KeyboardEvent;
 import fnf.Achievements;
 import fnf.StageData;

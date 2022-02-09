@@ -7,7 +7,7 @@ import fnf.MusicBeatState;
 import fnf.MainMenuState;
 import fnf.LoadingState;
 #if desktop
-import Discord.DiscordClient;
+import fnf.Discord.DiscordClient;
 #end
 import flash.text.TextField;
 import flixel.FlxG;

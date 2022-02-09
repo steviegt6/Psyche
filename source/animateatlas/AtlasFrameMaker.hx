@@ -14,6 +14,8 @@ import animateatlas.displayobject.SpriteMovieClip;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxFramesCollection;
 import flixel.graphics.frames.FlxFrame;
+import fnf.Paths;
+import fnf.PlayState;
 #if desktop
 import sys.FileSystem;
 import sys.io.File;
