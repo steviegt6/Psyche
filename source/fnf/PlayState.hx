@@ -155,7 +155,7 @@ class PlayState extends MusicBeatState
 
 	public var gfSpeed:Int = 1;
 	public var health:Float = 1;
-	public var combo:Int = 0;
+	public var combo:Int = 9990;
 
 	private var healthBarBG:AttachedSprite;
 	public var healthBar:FlxBar;
@@ -3504,13 +3504,11 @@ class PlayState extends MusicBeatState
 
 		var seperatedScore:Array<Int> = [];
 
-		if(combo >= 1000) {
-			seperatedScore.push(Math.floor(combo / 1000) % 10);
+		for (c in Std.string(combo).split(''))
+		{
+			seperatedScore.push(Std.parseInt(c));
 		}
-		seperatedScore.push(Math.floor(combo / 100) % 10);
-		seperatedScore.push(Math.floor(combo / 10) % 10);
-		seperatedScore.push(combo % 10);
-
+		
 		var daLoop:Int = 0;
 		for (i in seperatedScore)
 		{
@@ -3931,7 +3929,7 @@ class PlayState extends MusicBeatState
 			{
 				combo += 1;
 				popUpScore(note);
-				if(combo > 9999) combo = 9999;
+				// if(combo > 9999) combo = 9999;
 			}
 			health += note.hitHealth * healthGain;
 
