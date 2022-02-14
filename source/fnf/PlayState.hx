@@ -155,7 +155,7 @@ class PlayState extends MusicBeatState
 
 	public var gfSpeed:Int = 1;
 	public var health:Float = 1;
-	public var combo:Int = 9990;
+	public var combo:Int = 0;
 
 	private var healthBarBG:AttachedSprite;
 	public var healthBar:FlxBar;
@@ -3508,7 +3508,7 @@ class PlayState extends MusicBeatState
 		{
 			seperatedScore.push(Std.parseInt(c));
 		}
-		
+
 		var daLoop:Int = 0;
 		for (i in seperatedScore)
 		{
