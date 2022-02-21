@@ -32,7 +32,6 @@ class MainMenuState extends MusicBeatState
 		Dynamically-set version of Psyche. Use this instead of `Constants.psycheVersion`.
 	**/
 	public static var psycheVersion:String = "unset";
-
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;

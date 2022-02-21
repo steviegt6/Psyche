@@ -160,11 +160,11 @@ class ClientPrefs {
 		if(FlxG.save.data.framerate != null) {
 			framerate = FlxG.save.data.framerate;
 			if(framerate > FlxG.drawFramerate) {
-				FlxG.updateFramerate = framerate;
+				FlxG.updateFramerate = 1000;
 				FlxG.drawFramerate = framerate;
 			} else {
 				FlxG.drawFramerate = framerate;
-				FlxG.updateFramerate = framerate;
+				FlxG.updateFramerate = 1000;
 			}
 		}
 		/*if(FlxG.save.data.cursing != null) {
