@@ -39,7 +39,7 @@ import fnf.Controls;
 import fnf.DialogueBoxPsych;
 
 #if desktop
-import fnf.Discord;
+import fnf.DiscordClient;
 #end
 
 using StringTools;

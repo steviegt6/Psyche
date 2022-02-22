@@ -28,7 +28,7 @@ import fnf.Controls;
 import fnf.DialogueBoxPsych;
 
 #if desktop
-import fnf.Discord;
+import fnf.DiscordClient;
 #end
 
 using StringTools;
@@ -180,7 +180,7 @@ class EditorLua {
 			}
 		});
 
-		Discord.DiscordClient.addLuaCallbacks(lua);
+		DiscordClient.addLuaCallbacks(lua);
 
 		call('onCreate', []);
 		#end
