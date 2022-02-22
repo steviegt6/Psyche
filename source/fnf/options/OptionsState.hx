@@ -2,7 +2,7 @@ package fnf.options;
 
 import fnf.states.abstracts.AbstractOptionsState;
 #if desktop
-import fnf.Discord.DiscordClient;
+import fnf.DiscordClient;
 #end
 import flash.text.TextField;
 import flixel.FlxG;

@@ -1,7 +1,7 @@
 package fnf.editors;
 
 #if desktop
-import fnf.Discord.DiscordClient;
+import fnf.DiscordClient;
 #end
 import flixel.FlxG;
 import flixel.FlxSprite;

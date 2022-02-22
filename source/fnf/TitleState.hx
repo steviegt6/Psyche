@@ -3,7 +3,7 @@ package fnf;
 import fnf.psyche.eventbus.events.tests.TitleScreenCreateTestEvent;
 import fnf.psyche.Psyche;
 #if desktop
-import fnf.Discord.DiscordClient;
+import fnf.DiscordClient;
 import sys.thread.Thread;
 #end
 import flixel.FlxG;

@@ -1,7 +1,7 @@
 package fnf.options;
 
 #if desktop
-import fnf.Discord.DiscordClient;
+import fnf.DiscordClient;
 #end
 import flash.text.TextField;
 import flixel.FlxG;

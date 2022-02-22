@@ -2,7 +2,7 @@ package fnf;
 
 import flixel.graphics.FlxGraphic;
 #if desktop
-import fnf.Discord.DiscordClient;
+import fnf.DiscordClient;
 #end
 import fnf.Section.SwagSection;
 import fnf.Song.SwagSong;
