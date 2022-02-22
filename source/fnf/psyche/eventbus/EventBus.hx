@@ -2,6 +2,9 @@ package fnf.psyche.eventbus;
 
 using Std;
 
+/**
+    A simple object capable of dispatching events to event listeners.
+**/
 class EventBus {
     private var map:Map<String, Array<Dynamic -> Void>> = [];
 

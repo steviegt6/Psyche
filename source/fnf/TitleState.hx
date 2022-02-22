@@ -201,7 +201,7 @@ class TitleState extends MusicBeatState
 		}
 		#end
 
-		Psyche.PsycheEventBus.dispatch(new TitleScreenCreateTestEvent(), TitleScreenCreateTestEvent);
+		Psyche.PEBus.dispatch(new TitleScreenCreateTestEvent(), TitleScreenCreateTestEvent);
 	}
 
 	var logoBl:FlxSprite;

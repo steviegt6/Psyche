@@ -1,0 +1,1 @@
+Contains classes and definitions that would be suitable for a standard library.

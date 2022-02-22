@@ -24,7 +24,7 @@ class PsycheFpsDisplay extends TextField {
         var time = Sys.time();
         cachedFrames.push(time);
 
-        for (i => frame in cachedFrames) {
+        for (frame in cachedFrames) {
             if (frame > time - 1.0) {
                 count++;
             }
