@@ -16,17 +16,16 @@ Example:
   * \[PSYCH-239\] Added a feature - User
 
 ## Psyche
-### Main Contributors
+### Psyche Team
 * [Tomat](https://github.com/Steviegt6) - Main developer.
 
 ### Pull Requests
 
 ## Psych Engine
-### Main Contributors
+### Psych Engine Team
 * [Shadow Mario](https://github.com/ShadowMario) - Main developer of Psych Engine.
 * [RiverOaken](https://twitter.com/Riveroaken) - Art and animations.
-* [bbpanzu](https://github.com/bbpanzu) - Assiastant programming.
-* [shubs](https://twitter.com/yoshubs) - New input system.
+* [shubs](https://twitter.com/yoshubs) - Additional programming assistance.
   * [\[PSYCH-38\]](https://github.com/ShadowMario/FNF-PsychEngine/pull/38) Several tweaks & changes.
   * [\[PSYCH-96\]](https://github.com/ShadowMario/FNF-PsychEngine/pull/96) (Hopefully) Semi-improved input system.
   * [\[PSYCH-2951\]](https://github.com/ShadowMario/FNF-PsychEngine/pull/2951) Audio and visual caching overhaul.
@@ -37,6 +36,9 @@ Example:
 * [Smokey](https://twitter.com/Smokey_5_) - Spritemap Texture Atlas support. <!-- I have no social link for this guy -->
 * [Cary]() - OG resolution code.
 * [Nebula-Zorua](https://twitter.com/Nebula_Zorua) - VCR shader code.
+
+### Former Engine Members
+* [bbpanzu](https://github.com/bbpanzu) - Additional programming assistance.
 
 ### Pull Requests
 * [BiliousData](https://github.com/BiliousData)
