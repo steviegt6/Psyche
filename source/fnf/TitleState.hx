@@ -81,8 +81,6 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		Psyche.registerPsycheEvents();
-
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 

@@ -1,5 +1,9 @@
 package fnf;
 
+import openfl.text.TextField;
+import fnf.psyche.content.Identifier;
+import fnf.psyche.eventbus.DependencyContext;
+import fnf.psyche.Psyche;
 import openfl.display.FPS;
 import flixel.group.FlxGroup;
 import fnf.psyche.PsycheFpsDisplay;
@@ -22,12 +26,14 @@ class Main extends Sprite
 	var framerate:Int = 60; // How many frames per second the game should run at.
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
-	public static var fpsVar:PsycheFpsDisplay;
+	public static var fpsVar:TextField;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
 
 	public static function main():Void
 	{
+		Psyche.registerPsycheEvents();
+
 		Lib.current.addChild(new Main());
 	}
 
@@ -80,7 +86,7 @@ class Main extends Sprite
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
-		fpsVar = new PsycheFpsDisplay(10, 3);
+		fpsVar = Psyche.PEInjector.getDependency(new DependencyContext(new Identifier("psyche", "fps"), new FPS(10, 3, 0xFFFFFF)));
 
 		addChild(fpsVar);
 

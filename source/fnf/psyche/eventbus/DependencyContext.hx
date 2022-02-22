@@ -22,11 +22,18 @@ class DependencyContext
 	**/
 	public var value:Null<Dynamic>;
 
-    /**
-        Returns `original` if `original` is not `null`, otherwise `value`.
-    **/
+	public function new(id:Identifier, defVal:Dynamic)
+	{
+		this.id = id;
+		this.original = defVal;
+		this.value = null;
+	}
+
+	/**
+		Returns `original` if `value` is `null`, otherwise `value`.
+	**/
 	public function getCurrentValue():Dynamic
 	{
-		return original == null ? value : original;
+		return value == null ? original : value;
 	}
 }
