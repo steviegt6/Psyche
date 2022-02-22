@@ -28,8 +28,6 @@ class Main extends Sprite
 
 	public static function main():Void
 	{
-		FlxG.updateFramerate = 1000;
-
 		Lib.current.addChild(new Main());
 	}
 
