@@ -2,6 +2,8 @@ package fnf.psyche;
 
 import openfl.text.TextFormat;
 import openfl.text.TextField;
+import flixel.math.FlxMath;
+import openfl.system.System;
 
 class PsycheFpsDisplay extends TextField
 {
@@ -34,6 +36,7 @@ class PsycheFpsDisplay extends TextField
 
 		text = "FPS: " + cachedFrames.length;
 		text += "\nAvg. FPS: " + getAvgFps();
+		text += "\nMemory " + FlxMath.roundDecimal(System.totalMemory / 1000000, 1) + "MB";
 		#else
 		throw "Unsupported build target. Psyche doesn't support Web builds.";
 		#end

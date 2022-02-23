@@ -56,6 +56,7 @@ class MainMenuState extends MusicBeatState
 	override function create()
 	{
 		psycheVersion = Application.current.meta.get('version');
+		WeekData.loadTheFirstEnabledMod();
 
 		#if desktop
 		// Updating Discord Rich Presence

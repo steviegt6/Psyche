@@ -53,6 +53,11 @@ import fnf.Achievements;
 import fnf.StageData;
 import fnf.FunkinLua;
 import fnf.DialogueBoxPsych;
+import flixel.util.FlxSave;
+import fnf.Achievements;
+import fnf.StageData;
+import fnf.FunkinLua;
+import fnf.DialogueBoxPsych;
 #if sys
 import sys.FileSystem;
 #end
@@ -81,6 +86,7 @@ class PlayState extends MusicBeatState
 	public var modchartTimers:Map<String, FlxTimer> = new Map<String, FlxTimer>();
 	public var modchartSounds:Map<String, FlxSound> = new Map<String, FlxSound>();
 	public var modchartTexts:Map<String, ModchartText> = new Map<String, ModchartText>();
+	public var modchartSaves:Map<String, FlxSave> = new Map<String, FlxSave>();
 	//event variables
 	private var isCameraOnForcedPos:Bool = false;
 	#if (haxe >= "4.0.0")
