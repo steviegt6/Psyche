@@ -15,7 +15,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
-import fnf.FunkinLua;
 import fnf.Section.SwagSection;
 import fnf.Song.SwagSong;
 import openfl.events.KeyboardEvent;
@@ -114,19 +113,6 @@ class EditorPlayState extends MusicBeatState
 			vocals = new FlxSound();
 
 		generateSong(PlayState.SONG.song);
-		for (notetype in noteTypeMap.keys())
-		{
-			var luaToLoad:String = Paths.modFolders('custom_notetypes/' + notetype + '.lua');
-			if (sys.FileSystem.exists(luaToLoad))
-			{
-				var lua:fnf.editors.EditorLua = new fnf.editors.EditorLua(luaToLoad);
-				new FlxTimer().start(0.1, function(tmr:FlxTimer)
-				{
-					lua.stop();
-					lua = null;
-				});
-			}
-		}
 		noteTypeMap.clear();
 		noteTypeMap = null;
 
