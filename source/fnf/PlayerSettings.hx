@@ -1,9 +1,9 @@
 package fnf;
 
-import fnf.Controls;
 import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.util.FlxSignal;
+import fnf.Controls;
 
 // import ui.DeviceManager;
 // import props.Player;
@@ -14,21 +14,12 @@ class PlayerSettings
 	static public var player1(default, null):PlayerSettings;
 	static public var player2(default, null):PlayerSettings;
 
-	#if (haxe >= "4.0.0")
 	static public final onAvatarAdd = new FlxTypedSignal<PlayerSettings->Void>();
 	static public final onAvatarRemove = new FlxTypedSignal<PlayerSettings->Void>();
-	#else
-	static public var onAvatarAdd = new FlxTypedSignal<PlayerSettings->Void>();
-	static public var onAvatarRemove = new FlxTypedSignal<PlayerSettings->Void>();
-	#end
 
 	public var id(default, null):Int;
 
-	#if (haxe >= "4.0.0")
 	public final controls:Controls;
-	#else
-	public var controls:Controls;
-	#end
 
 	// public var avatar:Player;
 	// public var camera(get, never):PlayCamera;

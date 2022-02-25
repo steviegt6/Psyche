@@ -1,9 +1,9 @@
 package fnf.psyche;
 
-import openfl.text.TextFormat;
-import openfl.text.TextField;
 import flixel.math.FlxMath;
 import openfl.system.System;
+import openfl.text.TextField;
+import openfl.text.TextFormat;
 
 class PsycheFpsDisplay extends TextField
 {
@@ -24,10 +24,9 @@ class PsycheFpsDisplay extends TextField
 
 	public override function __enterFrame(deltaTime:Float)
 	{
-		#if !js
 		var time = Sys.time();
 
-        cachedFrames.push(new FpsCache(time, cachedFrames.length));
+		cachedFrames.push(new FpsCache(time, cachedFrames.length));
 
 		while (cachedFrames[0].time < time - 1.0)
 		{
@@ -37,9 +36,6 @@ class PsycheFpsDisplay extends TextField
 		text = "FPS: " + cachedFrames.length;
 		text += "\nAvg. FPS: " + getAvgFps();
 		text += "\nMemory " + FlxMath.roundDecimal(System.totalMemory / 1000000, 1) + "MB";
-		#else
-		throw "Unsupported build target. Psyche doesn't support Web builds.";
-		#end
 	}
 
 	private function getAvgFps():Int

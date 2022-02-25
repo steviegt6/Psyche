@@ -1,21 +1,21 @@
 package fnf;
 
-import openfl.text.TextField;
-import fnf.psyche.content.Identifier;
-import fnf.psyche.eventbus.DependencyContext;
-import fnf.psyche.Psyche;
-import openfl.display.FPS;
-import flixel.group.FlxGroup;
-import fnf.psyche.PsycheFpsDisplay;
-import flixel.graphics.FlxGraphic;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
+import flixel.graphics.FlxGraphic;
+import flixel.group.FlxGroup;
+import fnf.psyche.Psyche;
+import fnf.psyche.PsycheFpsDisplay;
+import fnf.psyche.content.Identifier;
+import fnf.psyche.eventbus.DependencyContext;
 import openfl.Assets;
 import openfl.Lib;
+import openfl.display.FPS;
 import openfl.display.Sprite;
-import openfl.events.Event;
 import openfl.display.StageScaleMode;
+import openfl.events.Event;
+import openfl.text.TextField;
 
 class Main extends Sprite
 {
@@ -26,6 +26,7 @@ class Main extends Sprite
 	var framerate:Int = 60; // How many frames per second the game should run at.
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
+
 	public static var fpsVar:TextField;
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
@@ -78,29 +79,22 @@ class Main extends Sprite
 		#if !debug
 		initialState = TitleState;
 		#end
-	
+
 		ClientPrefs.loadDefaultKeys();
 		// fuck you, persistent caching stays ON during sex
 		FlxGraphic.defaultPersist = true;
 		// the reason for this is we're going to be handling our own cache smartly
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
-
-		#if !mobile
 		fpsVar = Psyche.PEInjector.getDependency(new DependencyContext(new Identifier("psyche", "fps"), new FPS(10, 3, 0xFFFFFF)));
 
 		addChild(fpsVar);
 
 		Lib.current.stage.align = "tl";
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
-		
-		if(fpsVar != null) {
+
+		if (fpsVar != null)
+		{
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
-		#end
-
-		#if html5
-		FlxG.autoPause = false;
-		FlxG.mouse.visible = false;
-		#end
 	}
 }

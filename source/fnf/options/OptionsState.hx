@@ -1,30 +1,28 @@
 package fnf.options;
 
-import fnf.states.abstracts.AbstractOptionsState;
-#if desktop
-import fnf.DiscordClient;
-#end
+import flash.text.TextField;
 import flash.text.TextField;
 import flixel.FlxG;
+import flixel.FlxG;
 import flixel.FlxSprite;
+import flixel.FlxSprite;
+import flixel.FlxSubState;
 import flixel.addons.display.FlxGridOverlay;
+import flixel.graphics.FlxGraphic;
 import flixel.group.FlxGroup.FlxTypedGroup;
+import flixel.input.keyboard.FlxKey;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
-import flixel.util.FlxColor;
-import lime.utils.Assets;
-import flixel.FlxSubState;
-import flash.text.TextField;
-import flixel.FlxG;
-import flixel.FlxSprite;
-import flixel.util.FlxSave;
-import haxe.Json;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 import flixel.util.FlxTimer;
-import flixel.input.keyboard.FlxKey;
-import flixel.graphics.FlxGraphic;
 import fnf.Controls;
+import fnf.DiscordClient;
+import fnf.states.abstracts.AbstractOptionsState;
+import haxe.Json;
+import lime.utils.Assets;
 
 using StringTools;
 
@@ -74,9 +72,7 @@ class OptionsState extends AbstractOptionsState
 
 	override function create()
 	{
-		#if desktop
 		DiscordClient.changePresence("Options Menu", null);
-		#end
 
 		super.create();
 
