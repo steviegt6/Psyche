@@ -2,16 +2,9 @@ package fnf;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.FlxSubState;
-import flixel.addons.text.FlxTypeText;
-import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup;
-import flixel.input.FlxKeyManager;
-import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import flixel.util.FlxTimer;
 import haxe.Json;
-import haxe.format.JsonParser;
 import openfl.utils.Assets;
 import sys.FileSystem;
 import sys.io.File;

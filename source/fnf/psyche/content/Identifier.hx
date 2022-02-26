@@ -36,9 +36,9 @@ class Identifier
 		return namespace + ":" + content;
 	}
 
-    /**
-        Parses a `String` into an `Identifier`. Throws an exception if a string cannot be parsed.
-    **/
+	/**
+		Parses a `String` into an `Identifier`. Throws an exception if a string cannot be parsed.
+	**/
 	public function parse(s:String):Identifier
 	{
 		var res = tryParse(s);
@@ -49,9 +49,9 @@ class Identifier
 		return res.value;
 	}
 
-    /**
-        Safely parses a `String` into an `Identifier` using a `ParseResult`.
-    **/
+	/**
+		Safely parses a `String` into an `Identifier` using a `ParseResult`.
+	**/
 	public function tryParse(s:String):ParseResult<Identifier>
 	{
 		var strings = s.split(':');

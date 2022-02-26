@@ -2,36 +2,24 @@ package fnf;
 
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.FlxState;
-import flixel.addons.display.FlxGridOverlay;
-import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.addons.transition.TransitionData;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
 import flixel.input.keyboard.FlxKey;
-import flixel.math.FlxPoint;
-import flixel.math.FlxRect;
-import flixel.system.FlxSound;
-import flixel.system.ui.FlxSoundTray;
-import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import fnf.DiscordClient;
-import fnf.options.GraphicsSettingsSubState;
 import fnf.psyche.Psyche;
 import fnf.psyche.eventbus.events.tests.TitleScreenCreateTestEvent;
 import haxe.Json;
 import lime.app.Application;
 import openfl.Assets;
-import openfl.display.Bitmap;
 import openfl.display.BitmapData;
 import sys.FileSystem;
 import sys.io.File;
-import sys.thread.Thread;
 
 using StringTools;
 

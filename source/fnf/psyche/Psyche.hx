@@ -3,8 +3,8 @@ package fnf.psyche;
 import fnf.psyche.content.Identifier;
 import fnf.psyche.eventbus.DependencyContext;
 import fnf.psyche.eventbus.DependencyInjector;
-import fnf.psyche.eventbus.events.tests.TitleScreenCreateTestEvent;
 import fnf.psyche.eventbus.EventBus;
+import fnf.psyche.eventbus.events.tests.TitleScreenCreateTestEvent;
 
 class Psyche
 {

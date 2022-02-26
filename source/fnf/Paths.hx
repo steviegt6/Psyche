@@ -1,18 +1,11 @@
 package fnf;
 
-import animateatlas.AtlasFrameMaker;
 import flash.media.Sound;
 import flixel.FlxG;
-import flixel.FlxSprite;
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxAtlasFrames;
-import flixel.graphics.frames.FlxFrame.FlxFrameAngle;
-import flixel.math.FlxPoint;
-import flixel.math.FlxRect;
-import haxe.xml.Access;
 import lime.utils.Assets;
 import openfl.display.BitmapData;
-import openfl.geom.Rectangle;
 import openfl.system.System;
 import openfl.utils.AssetType;
 import openfl.utils.Assets as OpenFlAssets;

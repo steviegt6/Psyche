@@ -1,17 +1,9 @@
 package fnf;
 
 import animateatlas.AtlasFrameMaker;
-import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.addons.effects.FlxTrail;
-import flixel.animation.FlxBaseAnimation;
-import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.tweens.FlxTween;
-import flixel.util.FlxSort;
-import fnf.Section.SwagSection;
 import haxe.Json;
-import haxe.format.JsonParser;
-import openfl.utils.AssetType;
 import openfl.utils.Assets;
 import sys.FileSystem;
 import sys.io.File;

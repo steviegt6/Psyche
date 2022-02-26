@@ -1,6 +1,5 @@
 package fnf;
 
-import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.util.FlxSignal;
 import fnf.Controls;

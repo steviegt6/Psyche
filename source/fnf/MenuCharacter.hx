@@ -1,10 +1,7 @@
 package fnf;
 
 import flixel.FlxSprite;
-import flixel.graphics.frames.FlxAtlasFrames;
 import haxe.Json;
-import haxe.format.JsonParser;
-import openfl.utils.Assets;
 import sys.FileSystem;
 import sys.io.File;
 

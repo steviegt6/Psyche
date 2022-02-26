@@ -1,15 +1,11 @@
 package fnf;
 
-import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
 import flixel.graphics.FlxGraphic;
-import flixel.group.FlxGroup;
 import fnf.psyche.Psyche;
-import fnf.psyche.PsycheFpsDisplay;
 import fnf.psyche.content.Identifier;
 import fnf.psyche.eventbus.DependencyContext;
-import openfl.Assets;
 import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;

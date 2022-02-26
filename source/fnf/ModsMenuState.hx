@@ -1,28 +1,18 @@
 package fnf;
 
 import flash.geom.Rectangle;
-import flash.text.TextField;
 import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.addons.display.FlxGridOverlay;
-import flixel.addons.transition.FlxTransitionableState;
-import flixel.addons.ui.FlxButtonPlus;
-import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
-import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
 import fnf.DiscordClient;
 import haxe.Json;
-import haxe.format.JsonParser;
-import lime.utils.Assets;
 import openfl.display.BitmapData;
-import openfl.utils.Assets as OpenFlAssets;
 import sys.FileSystem;
-import sys.io.File;
 import sys.io.File;
 
 using StringTools;

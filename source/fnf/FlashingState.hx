@@ -1,33 +1,33 @@
 package fnf;
 
-import fnf.states.abstracts.AbstractOptionsState;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.FlxSubState;
-import flixel.text.FlxText;
-import flixel.util.FlxColor;
-import flixel.effects.FlxFlicker;
-import lime.app.Application;
 import flixel.addons.transition.FlxTransitionableState;
+import flixel.effects.FlxFlicker;
+import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import fnf.psyche.PsycheUtils;
+import fnf.states.abstracts.AbstractOptionsState;
 
 class FlashingState extends AbstractOptionsState
 {
 	public static var leftState:Bool = false;
 
-    /**
-        Get the selectable options for this state.
-    **/
-    function getOptions():Array<String> {
+	/**
+		Get the selectable options for this state.
+	**/
+	function getOptions():Array<String>
+	{
 		return ['Disable Lights', 'Keep Lights Enabled', 'Ask On Startup'];
 	}
 
-    /**
-        Handle selected options, labels will match strings from `getOptions`.
-    **/
-	function openSelectedSubstate(label:String):Void {
+	/**
+		Handle selected options, labels will match strings from `getOptions`.
+	**/
+	function openSelectedSubstate(label:String):Void
+	{
 		if (leftState)
 			return;
 
@@ -40,8 +40,10 @@ class FlashingState extends AbstractOptionsState
 			case 'Disable Lights':
 				ClientPrefs.flashing = false;
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-				FlxFlicker.flicker(warnText, 1, 0.1, false, true, function(flk:FlxFlicker) {
-					new FlxTimer().start(0.5, function (tmr:FlxTimer) {
+				FlxFlicker.flicker(warnText, 1, 0.1, false, true, function(flk:FlxFlicker)
+				{
+					new FlxTimer().start(0.5, function(tmr:FlxTimer)
+					{
 						MusicBeatState.switchState(new TitleState());
 					});
 				});
@@ -50,7 +52,8 @@ class FlashingState extends AbstractOptionsState
 				ClientPrefs.flashing = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				FlxTween.tween(warnText, {alpha: 0}, 1, {
-					onComplete: function (twn:FlxTween) {
+					onComplete: function(twn:FlxTween)
+					{
 						MusicBeatState.switchState(new TitleState());
 					}
 				});
@@ -58,8 +61,10 @@ class FlashingState extends AbstractOptionsState
 			case 'Ask On Startup':
 				ClientPrefs.flashingSet = false;
 				ClientPrefs.flashing = true;
-				FlxFlicker.flicker(warnText, 1, 0.1, false, true, function(flk:FlxFlicker) {
-					new FlxTimer().start(0.5, function (tmr:FlxTimer) {
+				FlxFlicker.flicker(warnText, 1, 0.1, false, true, function(flk:FlxFlicker)
+				{
+					new FlxTimer().start(0.5, function(tmr:FlxTimer)
+					{
 						MusicBeatState.switchState(new TitleState());
 					});
 				});
@@ -68,15 +73,18 @@ class FlashingState extends AbstractOptionsState
 		ClientPrefs.saveSettings();
 	}
 
-	override function getBackground() {
+	override function getBackground()
+	{
 		return new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 	}
 
-	override function getYOffset() {
+	override function getYOffset()
+	{
 		return 100;
 	}
 
 	var warnText:FlxText;
+
 	override function create()
 	{
 		super.create();

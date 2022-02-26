@@ -1,42 +1,46 @@
 package fnf.states.abstracts;
 
 import flixel.FlxG;
-import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxSprite;
+import flixel.group.FlxGroup.FlxTypedGroup;
 
 /**
-    Provides basic functionality for rendering menus with selectable text.
+	Provides basic functionality for rendering menus with selectable text.
 **/
 abstract class AbstractOptionsState extends MusicBeatState
 {
 	private var grpOptions:FlxTypedGroup<Alphabet>;
+
 	public var curSelected:Int = 0;
 	public var menuBG:FlxSprite;
 
 	public var selectorLeft:Alphabet;
 	public var selectorRight:Alphabet;
 
-    /**
-        Get the selectable options for this state.
-    **/
-    abstract function getOptions():Array<String>;
+	/**
+		Get the selectable options for this state.
+	**/
+	abstract function getOptions():Array<String>;
 
-    /**
-        Handle selected options, labels will match strings from `getOptions`.
-    **/
+	/**
+		Handle selected options, labels will match strings from `getOptions`.
+	**/
 	abstract function openSelectedSubstate(label:String):Void;
 
 	/**
 		Not required; a function that handles going back to the previous menu.
 	**/
-	public function handleGoBack() {
+	public function handleGoBack()
+	{
 	}
 
-	public function getYOffset():Int {
+	public function getYOffset():Int
+	{
 		return 0;
 	}
 
-	public function getBackground() {
+	public function getBackground()
+	{
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.color = 0xFFea71fd;
 		bg.setGraphicSize(Std.int(bg.width * 1.1));
@@ -46,10 +50,11 @@ abstract class AbstractOptionsState extends MusicBeatState
 		return bg;
 	}
 
-	override function create() {
+	override function create()
+	{
 		/*#if desktop
-		DiscordClient.changePresence("Options Menu", null);
-		#end*/
+			DiscordClient.changePresence("Options Menu", null);
+			#end */
 
 		add(getBackground());
 
@@ -82,32 +87,37 @@ abstract class AbstractOptionsState extends MusicBeatState
 
 	/*override function closeSubState() {
 		super.closeSubState();
-		
+
 		// ClientPrefs.saveSettings();
 	}*/
-
-	override function update(elapsed:Float) {
+	override function update(elapsed:Float)
+	{
 		super.update(elapsed);
 
-		if (controls.UI_UP_P) {
+		if (controls.UI_UP_P)
+		{
 			changeSelection(-1);
 		}
-		if (controls.UI_DOWN_P) {
+		if (controls.UI_DOWN_P)
+		{
 			changeSelection(1);
 		}
 
-		if (controls.BACK) {
+		if (controls.BACK)
+		{
 			handleGoBack();
 		}
 
-		if (controls.ACCEPT) {
+		if (controls.ACCEPT)
+		{
 			var options:Array<String> = getOptions();
 			trace(options[curSelected]);
 			openSelectedSubstate(options[curSelected]);
 		}
 	}
-	
-	function changeSelection(change:Int = 0) {
+
+	function changeSelection(change:Int = 0)
+	{
 		var options:Array<String> = getOptions();
 
 		curSelected += change;
@@ -118,12 +128,14 @@ abstract class AbstractOptionsState extends MusicBeatState
 
 		var bullShit:Int = 0;
 
-		for (item in grpOptions.members) {
+		for (item in grpOptions.members)
+		{
 			item.targetY = bullShit - curSelected;
 			bullShit++;
 
 			item.alpha = 0.6;
-			if (item.targetY == 0) {
+			if (item.targetY == 0)
+			{
 				item.alpha = 1;
 				selectorLeft.x = item.x - 63;
 				selectorLeft.y = item.y;

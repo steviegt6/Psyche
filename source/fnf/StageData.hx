@@ -2,7 +2,6 @@ package fnf;
 
 import fnf.Song;
 import haxe.Json;
-import haxe.format.JsonParser;
 import sys.FileSystem;
 import sys.io.File;
 

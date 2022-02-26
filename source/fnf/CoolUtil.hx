@@ -1,9 +1,6 @@
 package fnf;
 
 import flixel.FlxG;
-import lime.utils.AssetLibrary;
-import lime.utils.AssetManifest;
-import lime.utils.Assets as LimeAssets;
 import openfl.utils.Assets;
 import sys.FileSystem;
 import sys.io.File;
