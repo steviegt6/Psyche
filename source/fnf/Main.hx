@@ -29,7 +29,7 @@ class Main extends Sprite
 
 	public static function main():Void
 	{
-		Psyche.registerPsycheEvents();
+		Psyche.load();
 
 		Lib.current.addChild(new Main());
 	}
