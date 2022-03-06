@@ -83,14 +83,9 @@ class ModLoader
 
 	public static function resolveEnabledMods():Void
 	{
-		var enabledModsFile = File.getContent(getModDir(enabledPath));
+		enabledMods = Json.parse(File.getContent(getModDir(enabledPath))).enabled;
 
-		if (enabledModsFile.length > 1)
-		{
-			var enabledMods = Json.parse(enabledModsFile).enabled;
-
-			trace("Enabled mods: " + PsycheUtils.combineStrings(enabledMods, ", "));
-		}
+		trace("Enabled mods: " + PsycheUtils.combineStrings(enabledMods, ", "));
 	}
 
 	public static function resolveMods():Void
