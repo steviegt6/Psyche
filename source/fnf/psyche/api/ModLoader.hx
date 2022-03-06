@@ -59,6 +59,15 @@ class ModLoader
 	{
 		var env = new Env();
 
+		if (!FileSystem.isDirectory(modDir))
+		{
+			FileSystem.createDirectory(modDir);
+		}
+		if (!FileSystem.exists(getModDir(enabledPath)))
+		{
+			File.saveContent(getModDir(enabledPath), Json.stringify({enabled: []}));
+		}
+
 		resolveEnabledMods();
 		resolveMods();
 		registerEnv(env);
@@ -67,7 +76,7 @@ class ModLoader
 		env.link();
 	}
 
-	public static function getModDir(key:String):String
+	inline static public function getModDir(key:String):String
 	{
 		return modDir + "/" + key;
 	}
