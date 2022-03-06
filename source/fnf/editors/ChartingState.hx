@@ -34,6 +34,7 @@ import fnf.DiscordClient;
 import fnf.Prompt;
 import fnf.Section.SwagSection;
 import fnf.Song.SwagSong;
+import fnf.editors.AttachedFlxText;
 import haxe.Json;
 import haxe.format.JsonParser;
 import haxe.io.Bytes;

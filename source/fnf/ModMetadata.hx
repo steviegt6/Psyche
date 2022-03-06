@@ -1,5 +1,10 @@
 package fnf;
 
+import flixel.util.FlxColor;
+import haxe.Json;
+import sys.FileSystem;
+import sys.io.File;
+
 class ModMetadata
 {
 	public var folder:String;

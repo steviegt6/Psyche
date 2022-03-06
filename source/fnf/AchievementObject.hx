@@ -1,6 +1,11 @@
 package fnf;
 
+import flixel.FlxCamera;
+import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
+import flixel.text.FlxText;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
 
 class AchievementObject extends FlxSpriteGroup
 {

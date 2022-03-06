@@ -1,5 +1,7 @@
 package fnf;
 
+import flixel.FlxSprite;
+import flixel.graphics.FlxGraphic;
 import flixel.group.FlxSpriteGroup;
 
 class AttachedAchievement extends FlxSprite

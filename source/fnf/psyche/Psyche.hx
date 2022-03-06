@@ -6,15 +6,16 @@ import fnf.psyche.eventbus.DependencyContext;
 import fnf.psyche.eventbus.DependencyInjector;
 import fnf.psyche.eventbus.EventBus;
 import fnf.psyche.eventbus.events.tests.TitleScreenCreateTestEvent;
+import interpret.Env;
 
 class Psyche
 {
 	public static var PEInjector:DependencyInjector = new DependencyInjector();
 	public static var PEBus:EventBus = new EventBus();
 
-	public static function load():Void
+	public static function load(env:Env):Void
 	{
-		ModLoader.load();
+		ModLoader.load(env);
 		registerPsycheEvents();
 	}
 

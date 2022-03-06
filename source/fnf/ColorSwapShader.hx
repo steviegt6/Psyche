@@ -1,5 +1,7 @@
 package fnf;
 
+import flixel.system.FlxAssets;
+
 class ColorSwapShader extends FlxShader
 {
 	@:glFragmentSource('

@@ -1,5 +1,15 @@
 package fnf;
 
+import flixel.FlxG;
+import flixel.FlxSprite;
+import fnf.DialogueBoxPsych.DialogueAnimArray;
+import fnf.DialogueBoxPsych.DialogueCharacterFile;
+import haxe.Json;
+import sys.FileSystem;
+import sys.io.File;
+
+using StringTools;
+
 class DialogueCharacter extends FlxSprite
 {
 	private static var IDLE_SUFFIX:String = '-IDLE';

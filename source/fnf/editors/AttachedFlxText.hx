@@ -1,5 +1,8 @@
 package fnf.editors;
 
+import flixel.FlxSprite;
+import flixel.text.FlxText;
+
 class AttachedFlxText extends FlxText
 {
 	public var sprTracker:FlxSprite;

@@ -1,5 +1,7 @@
 package fnf.psyche.api;
 
+import fnf.psyche.api.ModLoader.ModMetadata;
+
 class ModFile
 {
 	/**

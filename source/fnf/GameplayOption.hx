@@ -1,5 +1,7 @@
 package fnf;
 
+using StringTools;
+
 class GameplayOption
 {
 	private var child:Alphabet;

@@ -1,5 +1,7 @@
 package fnf;
 
+import flixel.FlxSprite;
+
 class AlphaCharacter extends FlxSprite
 {
 	public static var alphabet:String = "abcdefghijklmnopqrstuvwxyz";

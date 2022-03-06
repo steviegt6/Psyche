@@ -1,10 +1,6 @@
 package fnf.psyche.api;
 
 import haxe.Json;
-import haxe.macro.Expr.ComplexType;
-import haxe.macro.Expr;
-import haxe.macro.TypeTools;
-import interpret.DynamicModule;
 import interpret.Env;
 import openfl.utils.Dictionary;
 import sys.FileSystem;
@@ -38,28 +34,16 @@ class ModLoader
 	public static var enabledMods:Array<String> = [];
 	public static var resolvedMods:Dictionary<String, ModFile> = new Dictionary();
 
-	public static function load():Void
+	public static function load(env:Env):Void
 	{
-		var env = new Env();
-
-		if (!FileSystem.isDirectory(modDir))
-		{
-			FileSystem.createDirectory(modDir);
-		}
-		if (!FileSystem.exists(getModDir(enabledPath)))
-		{
-			File.saveContent(getModDir(enabledPath), Json.stringify({enabled: []}));
-		}
-
 		resolveEnabledMods();
 		resolveMods();
-		registerEnv(env);
 		loadEnabledMods(env);
 
 		env.link();
 	}
 
-	inline static public function getModDir(key:String):String
+	public static function getModDir(key:String):String
 	{
 		return modDir + "/" + key;
 	}
@@ -73,11 +57,6 @@ class ModLoader
 
 	public static function resolveMods():Void
 	{
-		if (resolvedMods.iterator().hasNext())
-		{
-			resolvedMods = new Dictionary();
-		}
-
 		for (dir in FileSystem.readDirectory(modDir))
 		{
 			if (!FileSystem.isDirectory(dir))
@@ -95,19 +74,27 @@ class ModLoader
 
 	public static function loadEnabledMods(env:Env):Void
 	{
-		trace("Purging missing mods...");
+		/*trace("Purging missing mods...");
 
-		for (mod in enabledMods)
-		{
-			if (!resolvedMods.exists(mod))
+			var missing:Array<String> = [];
+
+			for (mod in enabledMods)
+			{
+				if (!resolvedMods.exists(mod))
+				{
+					// enabledMods.remove(mod);
+					missing.push(mod);
+					trace("Removed missing mod \"" + mod + "\" from enabled array!");
+				}
+			}
+
+			for (mod in missing)
 			{
 				enabledMods.remove(mod);
-				trace("Removed missing mod \"" + mod + "\" from enabled array!");
 			}
-		}
 
-		var output = File.write(getModDir(enabledPath));
-		output.writeString(Json.stringify({enabled: enabledMods}));
+			var output = File.write(getModDir(enabledPath));
+			output.writeString(Json.stringify({enabled: enabledMods})); */
 
 		for (mod in resolvedMods.iterator())
 		{
@@ -120,11 +107,5 @@ class ModLoader
 	public static function loadMod(file:ModFile):Void
 	{
 		trace("Loading mod \"" + file.metadata.name + "\"... (" + file.directory + ")");
-	}
-
-	// TODO: This is hacky and terrible.
-	public static function registerEnv(env:Env):Void
-	{
-		EnvPopulator.populate(env);
 	}
 }
