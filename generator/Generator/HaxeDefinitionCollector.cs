@@ -22,22 +22,23 @@ namespace Generator
         public static readonly List<Definition> Definitions = new()
         {
             new Definition("abstract class", args => args[2]),
-            // new Definition("class abstract", args => args[2]),
+            new Definition("class abstract", args => args[2]),
             // new Definition("enum abstract", args => args[2]),
-            new Definition("abstract enum", args => args[2]),
+            // new Definition("abstract enum", args => args[2]),
             new Definition("class", args => args[1]),
             new Definition("interface", args => args[1]),
-            new Definition("typedef", args => args[1]),
+            // new Definition("typedef", args => args[1]),
             // new Definition("enum", args => args[1])
         };
 
         /// <summary>
         ///     A collection of fully-qualified (package + name) type definitions (interfaces, typedefs, classes, etc.)
         /// </summary>
-        public List<string> QualifiedDefinitions = new();
+        public readonly List<string> QualifiedDefinitions = new();
 
         public void ReadFile(string file)
         {
+            string fileName = Path.GetFileNameWithoutExtension(file);
             string[] lines = File.ReadAllLines(file);
 
             string? package = null;
@@ -70,7 +71,12 @@ namespace Generator
                 
                 foreach (Definition def in Definitions.Where(def => line.StartsWith(def.Qualifier)))
                 {
-                    QualifiedDefinitions.Add(package + def.NameSupplier(words));
+                    string name = def.NameSupplier(words);
+
+                    if (name != fileName)
+                        name = fileName + '.' + name;
+                    
+                    QualifiedDefinitions.Add(package + name);
                     goto SkipDefs;
                 }
                 
