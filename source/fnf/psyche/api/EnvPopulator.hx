@@ -7,6 +7,7 @@ class EnvPopulator
 {
 	public static function populate(env:Env)
 	{
+		env.addModule("Constants", DynamicModule.fromStatic(Constants));
 		env.addModule("animateatlas.AtlasFrameMaker", DynamicModule.fromStatic(animateatlas.AtlasFrameMaker));
 		env.addModule("fnf.AchievementObject", DynamicModule.fromStatic(fnf.AchievementObject));
 		env.addModule("fnf.Achievements", DynamicModule.fromStatic(fnf.Achievements));
@@ -51,7 +52,6 @@ class EnvPopulator
 		env.addModule("fnf.InputFormatter", DynamicModule.fromStatic(fnf.InputFormatter));
 		env.addModule("fnf.LatencyState", DynamicModule.fromStatic(fnf.LatencyState));
 		env.addModule("fnf.LoadingState", DynamicModule.fromStatic(fnf.LoadingState));
-		env.addModule("fnf.LoadingState.MultiCallback", DynamicModule.fromStatic(fnf.MultiCallback));
 		env.addModule("fnf.MainMenuState", DynamicModule.fromStatic(fnf.MainMenuState));
 		env.addModule("fnf.MenuCharacter", DynamicModule.fromStatic(fnf.MenuCharacter));
 		env.addModule("fnf.MenuItem", DynamicModule.fromStatic(fnf.MenuItem));
@@ -59,6 +59,7 @@ class EnvPopulator
 		env.addModule("fnf.ModchartText", DynamicModule.fromStatic(fnf.ModchartText));
 		env.addModule("fnf.ModMetadata", DynamicModule.fromStatic(fnf.ModMetadata));
 		env.addModule("fnf.ModsMenuState", DynamicModule.fromStatic(fnf.ModsMenuState));
+		env.addModule("fnf.MultiCallback", DynamicModule.fromStatic(fnf.MultiCallback));
 		env.addModule("fnf.MusicBeatState", DynamicModule.fromStatic(fnf.MusicBeatState));
 		env.addModule("fnf.MusicBeatSubstate", DynamicModule.fromStatic(fnf.MusicBeatSubstate));
 		env.addModule("fnf.Note", DynamicModule.fromStatic(fnf.Note));
@@ -87,7 +88,7 @@ class EnvPopulator
 		env.addModule("animateatlas.tilecontainer.TileAnimationLibrary", DynamicModule.fromStatic(animateatlas.tilecontainer.TileAnimationLibrary));
 		env.addModule("animateatlas.tilecontainer.TileContainerMovieClip", DynamicModule.fromStatic(animateatlas.tilecontainer.TileContainerMovieClip));
 		env.addModule("animateatlas.tilecontainer.TileContainerSymbol", DynamicModule.fromStatic(animateatlas.tilecontainer.TileContainerSymbol));
-		env.addModule("fnf.editors.AttachedFlxState.AttachedFlxText", DynamicModule.fromStatic(fnf.editors.AttachedFlxText));
+		env.addModule("fnf.editors.AttachedFlxText", DynamicModule.fromStatic(fnf.editors.AttachedFlxText));
 		env.addModule("fnf.editors.CharacterEditorState", DynamicModule.fromStatic(fnf.editors.CharacterEditorState));
 		env.addModule("fnf.editors.ChartingState", DynamicModule.fromStatic(fnf.editors.ChartingState));
 		env.addModule("fnf.editors.DialogueCharacterEditorState", DynamicModule.fromStatic(fnf.editors.DialogueCharacterEditorState));
@@ -110,7 +111,6 @@ class EnvPopulator
 		env.addModule("fnf.psyche.Psyche", DynamicModule.fromStatic(fnf.psyche.Psyche));
 		env.addModule("fnf.psyche.PsycheFpsDisplay", DynamicModule.fromStatic(fnf.psyche.PsycheFpsDisplay));
 		env.addModule("fnf.psyche.PsycheUtils", DynamicModule.fromStatic(fnf.psyche.PsycheUtils));
-		// env.addModule("fnf.psyche.api.EnvPopulator", DynamicModule.fromStatic(fnf.psyche.api.EnvPopulator));
 		env.addModule("fnf.psyche.api.Mod", DynamicModule.fromStatic(fnf.psyche.api.Mod));
 		env.addModule("fnf.psyche.api.ModFile", DynamicModule.fromStatic(fnf.psyche.api.ModFile));
 		env.addModule("fnf.psyche.api.ModLoader", DynamicModule.fromStatic(fnf.psyche.api.ModLoader));

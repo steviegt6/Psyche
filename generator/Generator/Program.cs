@@ -21,7 +21,7 @@ namespace Generator
 
             foreach (FileInfo file in dir.EnumerateFiles("**", SearchOption.AllDirectories))
             {
-                if (file.Extension != ".hx" || file.Name is "Constants.hx" or "import.hx" or "Main.hx")
+                if (file.Extension != ".hx" || file.Name is "EnvPopulator.hx" or "Main.hx")
                     continue;
                 
                 collector.ReadFile(file.FullName);

@@ -1,3 +1,5 @@
+package;
+
 /**
 	Contains miscellaneous constant values for use within projects, not necsesarily associated with FNF.
 **/
