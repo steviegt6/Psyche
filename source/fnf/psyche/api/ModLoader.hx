@@ -2,6 +2,7 @@ package fnf.psyche.api;
 
 import haxe.Json;
 import haxe.macro.Expr.ComplexType;
+import haxe.macro.Expr;
 import haxe.macro.TypeTools;
 import interpret.DynamicModule;
 import interpret.Env;
@@ -129,16 +130,9 @@ class ModLoader
 		trace("Loading mod \"" + file.metadata.name + "\"... (" + file.directory + ")");
 	}
 
+	// TODO: This is hacky and terrible.
 	public static function registerEnv(env:Env):Void
 	{
-		// resolve all classes
-		var classes = CompileTime.getAllClasses("");
-
-		for (clazz in classes)
-		{
-			var pkg = Type.getClassName(clazz);
-
-			env.addModule(pkg, DynamicModule.fromStatic(TypeTools.fromClass()));
-		}
+		// env.addModule(pkg, DynamicModule.fromStatic());
 	}
 }
