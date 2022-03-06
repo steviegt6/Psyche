@@ -59,6 +59,15 @@ class ModLoader
 	{
 		var env = new Env();
 
+		if (!FileSystem.isDirectory(modDir))
+		{
+			FileSystem.createDirectory(modDir);
+		}
+		if (!FileSystem.exists(getModDir(enabledPath)))
+		{
+			File.saveContent(getModDir(enabledPath), "{}");
+		}
+
 		resolveEnabledMods();
 		resolveMods();
 		registerEnv(env);
@@ -67,16 +76,21 @@ class ModLoader
 		env.link();
 	}
 
-	public static function getModDir(key:String):String
+	inline static public function getModDir(key:String):String
 	{
 		return modDir + "/" + key;
 	}
 
 	public static function resolveEnabledMods():Void
 	{
-		enabledMods = Json.parse(File.getContent(getModDir(enabledPath))).enabled;
+		var enabledModsFile = File.getContent(getModDir(enabledPath));
 
-		trace("Enabled mods: " + PsycheUtils.combineStrings(enabledMods, ", "));
+		if (enabledModsFile.length > 1)
+		{
+			var enabledMods = Json.parse(enabledModsFile).enabled;
+
+			trace("Enabled mods: " + PsycheUtils.combineStrings(enabledMods, ", "));
+		}
 	}
 
 	public static function resolveMods():Void
