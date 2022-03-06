@@ -2,6 +2,9 @@ package fnf.psyche.api;
 
 import fnf.psyche.api.ModLoader.ModMetadata;
 
+/**
+ * A "file" containing a directory pointer as well as metadata.
+ */
 class ModFile
 {
 	/**
@@ -14,7 +17,5 @@ class ModFile
 	 */
 	public var directory:String;
 
-	public function new()
-	{
-	}
+	public function new() {}
 }

@@ -10,6 +10,9 @@ import sys.io.File;
 
 using StringTools;
 
+/**
+ * Metadata used for various mod-related actions.
+ */
 typedef ModMetadata =
 {
 	/**
@@ -28,6 +31,9 @@ typedef ModMetadata =
 	var entrypoint:String;
 }
 
+/**
+ * The class actually responsible for managing and loading mods.
+ */
 class ModLoader
 {
 	/**
@@ -71,7 +77,7 @@ class ModLoader
 	{
 		for (dir in FileSystem.readDirectory(modDir))
 		{
-			if (!FileSystem.isDirectory(dir))
+			if (!FileSystem.isDirectory(getModDir(dir)))
 				continue;
 
 			var modFile:ModFile = new ModFile();

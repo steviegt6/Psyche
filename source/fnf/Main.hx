@@ -5,6 +5,7 @@ import flixel.FlxState;
 import flixel.graphics.FlxGraphic;
 import fnf.psyche.Psyche;
 import fnf.psyche.api.EnvPopulator;
+import fnf.psyche.api.PsycheIdentifiers;
 import fnf.psyche.content.Identifier;
 import fnf.psyche.eventbus.DependencyContext;
 import interpret.Env;
@@ -17,18 +18,16 @@ import openfl.text.TextField;
 
 class Main extends Sprite
 {
-	var gameWidth:Int = 1280; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
-	var gameHeight:Int = 720; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
-	var initialState:Class<FlxState> = TitleState; // The FlxState the game starts with.
-	var zoom:Float = -1; // If -1, zoom is automatically calculated to fit the window dimensions.
-	var framerate:Int = 60; // How many frames per second the game should run at.
-	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
-	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
-
-	public static var fpsVar:TextField;
+	public static var gameWidth:Int; // Width of the game in pixels (might be less / more in actual pixels depending on your zoom).
+	public static var gameHeight:Int; // Height of the game in pixels (might be less / more in actual pixels depending on your zoom).
+	public static var initialState:Class<FlxState>; // The FlxState the game starts with.
+	public static var zoom:Float; // If -1, zoom is automatically calculated to fit the window dimensions.
+	public static var framerate:Int; // How many frames per second the game should run at.
+	public static var skipSplash:Bool; // Whether to skip the flixel splash screen that appears in release mode.
+	public static var startFullscreen:Bool; // Whether to start the game in fullscreen on desktop targets.
+	public static var fpsVar:TextField; // The FPS display to use.
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
-
 	public static function main():Void
 	{
 		var env = new Env();
@@ -64,6 +63,14 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+		gameWidth = Psyche.getDependency(PsycheIdentifiers.GAME_WIDTH, 1280);
+		gameHeight = Psyche.getDependency(PsycheIdentifiers.GAME_HEIGHT, 720);
+		initialState = Psyche.getDependency(PsycheIdentifiers.GAME_INITIAL_STATE, TitleState);
+		zoom = Psyche.getDependency(PsycheIdentifiers.GAME_ZOOM, -1);
+		framerate = Psyche.getDependency(PsycheIdentifiers.GAME_FRAMERATE, 60);
+		skipSplash = Psyche.getDependency(PsycheIdentifiers.GAME_SKIP_SPLASH, true);
+		startFullscreen = Psyche.getDependency(PsycheIdentifiers.GAME_START_FULLSCREEN, false);
+		fpsVar = Psyche.getDependency(PsycheIdentifiers.GAME_FPS_DISPLAY, new FPS(10, 3, 0xFFFFFF));
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
@@ -85,8 +92,6 @@ class Main extends Sprite
 		FlxGraphic.defaultPersist = true;
 		// the reason for this is we're going to be handling our own cache smartly
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
-		fpsVar = Psyche.PEInjector.getDependency(new DependencyContext(new Identifier("psyche", "fps"), new FPS(10, 3, 0xFFFFFF)));
-
 		addChild(fpsVar);
 
 		Lib.current.stage.align = "tl";

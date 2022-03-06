@@ -43,4 +43,9 @@ class Psyche
 			context.value = new PsycheFpsDisplay(10, 3);
 		}
 	}
+
+	public static function getDependency(id:Identifier, def:Dynamic):Dynamic
+	{
+		return PEInjector.getDependency(new DependencyContext(id, def));
+	}
 }

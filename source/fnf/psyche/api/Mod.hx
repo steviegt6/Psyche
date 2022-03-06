@@ -2,6 +2,9 @@ package fnf.psyche.api;
 
 import fnf.psyche.eventbus.DependencyContext;
 
+/**
+ * A base `Mod` class, used as an entrypoint.
+ */
 abstract class Mod
 {
 	/**

@@ -80,7 +80,6 @@ class EnvPopulator
 		env.addModule("fnf.StrumNote", DynamicModule.fromStatic(fnf.StrumNote));
 		env.addModule("fnf.TitleState", DynamicModule.fromStatic(fnf.TitleState));
 		env.addModule("fnf.WeekData", DynamicModule.fromStatic(fnf.WeekData));
-		env.addModule("preload.LogoImage", DynamicModule.fromStatic(preload.LogoImage));
 		env.addModule("vlc.VlcBitmap", DynamicModule.fromStatic(vlc.VlcBitmap));
 		env.addModule("animateatlas.displayobject.SpriteAnimationLibrary", DynamicModule.fromStatic(animateatlas.displayobject.SpriteAnimationLibrary));
 		env.addModule("animateatlas.displayobject.SpriteMovieClip", DynamicModule.fromStatic(animateatlas.displayobject.SpriteMovieClip));
@@ -114,6 +113,7 @@ class EnvPopulator
 		env.addModule("fnf.psyche.api.Mod", DynamicModule.fromStatic(fnf.psyche.api.Mod));
 		env.addModule("fnf.psyche.api.ModFile", DynamicModule.fromStatic(fnf.psyche.api.ModFile));
 		env.addModule("fnf.psyche.api.ModLoader", DynamicModule.fromStatic(fnf.psyche.api.ModLoader));
+		env.addModule("fnf.psyche.api.PsycheIdentifiers", DynamicModule.fromStatic(fnf.psyche.api.PsycheIdentifiers));
 		env.addModule("fnf.psyche.content.Identifier", DynamicModule.fromStatic(fnf.psyche.content.Identifier));
 		env.addModule("fnf.psyche.eventbus.DependencyContext", DynamicModule.fromStatic(fnf.psyche.eventbus.DependencyContext));
 		env.addModule("fnf.psyche.eventbus.DependencyInjector", DynamicModule.fromStatic(fnf.psyche.eventbus.DependencyInjector));
