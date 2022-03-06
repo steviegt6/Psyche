@@ -1,10 +1,8 @@
 package;
 
-import flixel.system.FlxBasePreloader;
-import flash.display.Bitmap;
-import flash.display.Sprite;
 import flash.Lib;
-import preload.LogoImage;
+import flash.display.Sprite;
+import flixel.system.FlxBasePreloader;
 
 class Preloader extends FlxBasePreloader
 {
@@ -21,9 +19,9 @@ class Preloader extends FlxBasePreloader
 		this._height = Lib.current.stage.stageHeight;
 
 		var ratio:Float = this._width / 2560; // This allows us to scale assets depending on the size of the screen.
-		
+
 		logo = new Sprite();
-		logo.addChild(new Bitmap(new LogoImage(0, 0))); // Sets the graphic of the sprite to a Bitmap object, which uses our embedded BitmapData class.
+		// logo.addChild(new Bitmap(new LogoImage(0, 0))); // Sets the graphic of the sprite to a Bitmap object, which uses our embedded BitmapData class.
 		logo.scaleX = logo.scaleY = ratio;
 		logo.x = ((this._width) / 2) - ((logo.width) / 2);
 		logo.y = (this._height / 2) - ((logo.height) / 2);
