@@ -16,11 +16,13 @@ namespace Generator
             Console.WriteLine("Input directory: " + inputDirectory);
             Console.WriteLine("Output file: " + outputFile);
 
-            HaxeDefinitionCollector collector = new();
+            HaxeModuleCollector collector = new();
             DirectoryInfo dir = new(inputDirectory);
 
             foreach (FileInfo file in dir.EnumerateFiles("**", SearchOption.AllDirectories))
             {
+                // EnvPopulator.hx is excluded to order to stop some issues with module loaded.
+                // Main.hx is excluded because Atlas grr + no need for people to access it I guess.
                 if (file.Extension != ".hx" || file.Name is "EnvPopulator.hx" or "Main.hx")
                     continue;
                 
@@ -66,8 +68,10 @@ namespace Generator
 
             foreach (string definition in definitions)
             {
-                contents.AppendLine($"env.addModule(\"{definition}\", DynamicModule.fromStatic({definition}));");
+                contents.AppendLine($"\t\tenv.addModule(\"{definition}\", DynamicModule.fromStatic({definition}));");
             }
+
+            contents.Append("\t\t// Auto-generated interpret (https://github.com/jeremyfa/interpret) module bindings.");
 
             return contents.ToString();
         }

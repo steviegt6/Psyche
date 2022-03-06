@@ -17,6 +17,8 @@ namespace Generator
             {
                 StringBuilder builder = new();
 
+                builder.Append('\t');
+                
                 if (Public)
                     builder.Append("public ");
 
@@ -24,9 +26,10 @@ namespace Generator
                     builder.Append("static ");
 
                 builder.AppendLine("function " + Name)
-                    .AppendLine("{")
+                    .AppendLine("\t{")
                     .AppendLine(Contents)
-                    .Append('}');
+                    .AppendLine("\t}")
+                    .Append($"\t// Auto-generated function \"{Name}\" for Psyche (https://github.com/Steviegt6/Psyche/).");
                 
                 return builder.ToString();
             }
@@ -46,18 +49,19 @@ namespace Generator
             builder.AppendLine($"package {Package};");
 
             foreach (string import in Imports) 
-                builder.AppendLine($"import {import};");
+                builder.Append($"\nimport {import};");
             
             foreach (string @using in Usings) 
-                builder.AppendLine($"using {@using};");
+                builder.Append($"\nusing {@using};");
 
-            builder.AppendLine("class " + ClassName)
+            builder.AppendLine("\n\nclass " + ClassName)
                 .AppendLine("{");
 
             foreach (HaxeFunction function in Functions) 
                 builder.AppendLine(function.ToString());
 
-            builder.Append('}');
+            builder.AppendLine("}")
+                .AppendLine($"// Auto-generated class \"{ClassName}\" for Psyche (https://github.com/Steviegt6/Psyche/).");
 
             return builder.ToString();
         }
