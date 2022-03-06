@@ -65,7 +65,7 @@ class ModLoader
 		}
 		if (!FileSystem.exists(getModDir(enabledPath)))
 		{
-			File.saveContent(getModDir(enabledPath), "{}");
+			File.saveContent(getModDir(enabledPath), Json.stringify({enabled: []}));
 		}
 
 		resolveEnabledMods();
