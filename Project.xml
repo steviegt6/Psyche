@@ -58,7 +58,7 @@
 		<library name="week6"         preload="false" />
 	</section>
 	
-	<assets path="mods/"                rename=''               />
+	<assets path="mods/"                embed='false'           />
 	<assets path="plugins/"             rename=''               if="VIDEOS_ALLOWED windows" />
 	<assets path="dlls/"                rename=''               if="VIDEOS_ALLOWED windows" />
 	<assets path="assets/videos"        library="videos"        if="VIDEOS_ALLOWED"/>
@@ -76,8 +76,7 @@
 	<assets path="assets/week5"         library="week5"         exclude="*.mp3" unless="web"/>
 	<assets path="assets/week6"         library="week6"         exclude="*.ogg" if="web"/>
 	<assets path="assets/week6"         library="week6"         exclude="*.mp3" unless="web"/>
-	
-	<assets path='example_mods' rename='mods' embed='false' if="MODS_ALLOWED"/>
+
 	<assets path='art/readme.txt' rename='do NOT readme.txt' />
 	<!-- <template path='mods' /> -->
 	
