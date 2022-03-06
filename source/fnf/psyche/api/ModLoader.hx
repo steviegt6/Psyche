@@ -133,6 +133,6 @@ class ModLoader
 	// TODO: This is hacky and terrible.
 	public static function registerEnv(env:Env):Void
 	{
-		// env.addModule(pkg, DynamicModule.fromStatic());
+		env.addModule("fnf.psyche.api", DynamicModule.fromStatic(fnf.psyche.api.Mod));
 	}
 }
