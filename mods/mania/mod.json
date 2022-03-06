@@ -1,4 +1,5 @@
 {
     "name": "Mania",
-    "description": "Vanilla Friday Night Funkin' content."
+    "description": "Vanilla Friday Night Funkin' content.",
+    "entrypoint": "mods.mania.ManiaMod"
 }

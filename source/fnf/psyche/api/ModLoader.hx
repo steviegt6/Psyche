@@ -1,10 +1,14 @@
 package fnf.psyche.api;
 
 import haxe.Json;
+import interpret.DynamicInstance;
+import interpret.DynamicModule;
 import interpret.Env;
 import openfl.utils.Dictionary;
 import sys.FileSystem;
 import sys.io.File;
+
+using StringTools;
 
 typedef ModMetadata =
 {
@@ -17,6 +21,11 @@ typedef ModMetadata =
 	 * A short description of the mod.
 	 */
 	var description:String;
+
+	/**
+	 * The qualified class name of your `Mod`-extending class.
+	 */
+	var entrypoint:String;
 }
 
 class ModLoader
@@ -33,6 +42,7 @@ class ModLoader
 
 	public static var enabledMods:Array<String> = [];
 	public static var resolvedMods:Dictionary<String, ModFile> = new Dictionary();
+	public static var loadedMods:Array<DynamicInstance> = [];
 
 	public static function load(env:Env):Void
 	{
@@ -41,6 +51,8 @@ class ModLoader
 		loadEnabledMods(env);
 
 		env.link();
+
+		loadMods(env);
 	}
 
 	public static function getModDir(key:String):String
@@ -98,14 +110,58 @@ class ModLoader
 
 		for (mod in resolvedMods.iterator())
 		{
+			if (!enabledMods.contains(mod))
+			{
+				continue;
+			}
+
 			var file = resolvedMods[mod];
 
-			loadMod(file);
+			loadMod(file, env);
 		}
 	}
 
-	public static function loadMod(file:ModFile):Void
+	public static function loadMod(file:ModFile, env:Env):Void
 	{
-		trace("Loading mod \"" + file.metadata.name + "\"... (" + file.directory + ")");
+		trace("Loading mod file \"" + file.metadata.name + "\"... (" + file.directory + ")");
+
+		// Load mod files into memory
+		PsycheUtils.readDirectoryRecursive(getModDir(file.directory), function(path:String):Void
+		{
+			if (path.endsWith(".hx"))
+			{
+				var pkg = path.replace("/", ".").replace(".hx", "");
+
+				trace("Loading file \"" + path + "\"... (" + pkg + ")");
+
+				var code = File.getContent(path);
+				var split = pkg.split(".");
+				var name = split[split.length - 1];
+
+				env.addModule(pkg, DynamicModule.fromString(env, name, code));
+			}
+		});
+	}
+
+	public static function loadMods(env:Env):Void
+	{
+		for (mod in resolvedMods.iterator())
+		{
+			var file = resolvedMods[mod];
+
+			// Create a new mod object
+			var parts = file.metadata.entrypoint.split(".");
+			var modName = parts[parts.length - 1];
+
+			var modClass = env.modules.get(file.metadata.entrypoint).dynamicClasses.get(modName);
+
+			var modInstance = modClass.createInstance();
+			loadedMods.push(modInstance);
+		}
+
+		for (mod in loadedMods)
+		{
+			mod.call("load");
+		}
 	}
 }

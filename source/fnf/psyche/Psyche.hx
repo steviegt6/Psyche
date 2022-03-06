@@ -16,6 +16,7 @@ class Psyche
 	public static function load(env:Env):Void
 	{
 		ModLoader.load(env);
+
 		registerPsycheEvents();
 	}
 
@@ -31,6 +32,11 @@ class Psyche
 
 	private static function handleInjections(context:DependencyContext):Void
 	{
+		for (mods in ModLoader.loadedMods)
+		{
+			mods.call("injectDependencies", [context]);
+		}
+
 		if (context.id.toString() == "psyche:fps")
 		{
 			trace("HI");
