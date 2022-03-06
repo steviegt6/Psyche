@@ -12,16 +12,27 @@ I've been waiting nearly two months for a pull request as simple as one that cha
 ## Credits
 If you wish to view both Psych Engine's credits as well as Psyche's credits, please view [CREDITS.md](CREDITS).
 
+## Building
+Featured here are exclusively unique steps required to build _Psyche_. _Psyche_ does not use some of the additional libraries that _Psych Engine_ uses. The latest version of Haxe, HaxeFlixel, etc. are required. Figure out how to install these using a pre-existing tutorial.
+
+
+
 # Psych Engine
 The engine originally used as a base for the [Mind Games Mod](https://gamebanana.com/mods/301107), intended to be a fix for the vanilla version's many issues while keeping the casual play aspect of it. Also aiming to be an easier modding alternative for those that are unfamiliar with Haxe.
 
-## Building:
+Additionally, the `interpret` haxelib is used as well (`haxelib install interpret`). LuaJIT is not used in this project.
+
+If you wish to contribute, you will also need .NET 6.0 installed (https://dotnet.microsoft.com/en-us/download/dotnet/6.0) in order to run the included code generator.
+
+Whenever a new class or interface is created, please run `_generate.bat` (or `_generate.sh`) to generate an updated `./source/fnf/psyche/api/EnvPopulator.hx` file. You should format this before opening a pull request.
+
+<!-- ## Building:
 **This is temporary, building instructions specifically for Psyche will be provided later.**
 You must have [the most up-to-date version of Haxe](https://haxe.org/download/). No support for older versions (i.e. 4.1.15) will be offered. Anyone attempting to get support while using an outdated version of Haxe will be promptly ignored.
 
 Follow a Friday Night Funkin' source code compilation tutorial, after this you will need to install LuaJIT.
 
-LuaJIT can be installed by running `haxelib install linc_luajit` in your favorite terminal. If you'd rather not run `.lua` scripts on a local build, delete the `LUA_ALLOWED` line in `Project.xml`.
+LuaJIT can be installed by running `haxelib install linc_luajit` in your favorite terminal. If you'd rather not run `.lua` scripts on a local build, delete the `LUA_ALLOWED` line in `Project.xml`. -->
 
 # Psyche Features
 **In progress.**

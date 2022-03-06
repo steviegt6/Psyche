@@ -6,7 +6,7 @@ namespace Generator
     {
         public class HaxeFunctionBuilder
         {
-            private WritableHaxeFile.HaxeFunction Function = new();
+            private readonly WritableHaxeFile.HaxeFunction Function = new();
 
             public HaxeFunctionBuilder WithPublic(bool value = true)
             {
@@ -17,6 +17,12 @@ namespace Generator
             public HaxeFunctionBuilder WithStatic(bool value = true)
             {
                 Function.Static = value;
+                return this;
+            }
+            
+            public HaxeFunctionBuilder WithName(string value)
+            {
+                Function.Name = value;
                 return this;
             }
             
@@ -32,8 +38,14 @@ namespace Generator
             }
         }
 
-        private WritableHaxeFile File = new();
+        private readonly WritableHaxeFile File = new();
 
+        public WritableHaxeFileBuilder WithPackage(string value)
+        {
+            File.Package = value;
+            return this;
+        }
+        
         public WritableHaxeFileBuilder WithClassName(string value)
         {
             File.ClassName = value;

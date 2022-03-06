@@ -4,8 +4,10 @@ import flixel.FlxGame;
 import flixel.FlxState;
 import flixel.graphics.FlxGraphic;
 import fnf.psyche.Psyche;
+import fnf.psyche.api.EnvPopulator;
 import fnf.psyche.content.Identifier;
 import fnf.psyche.eventbus.DependencyContext;
+import interpret.Env;
 import openfl.Lib;
 import openfl.display.FPS;
 import openfl.display.Sprite;
@@ -29,7 +31,9 @@ class Main extends Sprite
 
 	public static function main():Void
 	{
-		Psyche.load();
+		var env = new Env();
+		EnvPopulator.populate(env);
+		Psyche.load(env);
 
 		Lib.current.addChild(new Main());
 	}

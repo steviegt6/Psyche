@@ -10,7 +10,8 @@
 			"name": "Debug",
 			"type": "lime",
 			"request": "launch",
-			"preLaunchTask": null
+			"preLaunchTask": null,
+			"program": "${workspaceFolder}/export/release/windows/bin/Psyche.exe"
 		},
 		{
 			"name": "Macro",
