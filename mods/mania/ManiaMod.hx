@@ -7,7 +7,5 @@ class ManiaMod extends Mod
 	public function new()
 	{
 		super("Mania", "mania", Constants.fnfVersion);
-
-		trace("Hello from the Mania mod!");
 	}
 }
