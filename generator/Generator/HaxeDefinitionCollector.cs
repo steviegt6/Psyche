@@ -72,6 +72,10 @@ namespace Generator
                 foreach (Definition def in Definitions.Where(def => line.StartsWith(def.Qualifier)))
                 {
                     string name = def.NameSupplier(words);
+                    
+                    // Skip over classes with generic types :(
+                    if (name.Contains('<') && name.Contains('>'))
+                        goto SkipDefs;
 
                     if (name != fileName)
                         name = fileName + '.' + name;

@@ -121,7 +121,6 @@ class EnvPopulator
 		env.addModule("fnf.psyche.eventbus.DependencyInjector", DynamicModule.fromStatic(fnf.psyche.eventbus.DependencyInjector));
 		env.addModule("fnf.psyche.eventbus.Event", DynamicModule.fromStatic(fnf.psyche.eventbus.Event));
 		env.addModule("fnf.psyche.eventbus.EventBus", DynamicModule.fromStatic(fnf.psyche.eventbus.EventBus));
-		env.addModule("fnf.psyche.std.ParseResult.ParseResult<T>", DynamicModule.fromStatic(fnf.psyche.std.ParseResult.ParseResult<T>));
 		env.addModule("fnf.states.abstracts.AbstractOptionsState", DynamicModule.fromStatic(fnf.states.abstracts.AbstractOptionsState));
 		env.addModule("fnf.psyche.eventbus.events.tests.TitleScreenCreateTestEvent",
 			DynamicModule.fromStatic(fnf.psyche.eventbus.events.tests.TitleScreenCreateTestEvent));
