@@ -1,6 +1,7 @@
 package fnf.psyche;
 
 import fnf.psyche.api.ModLoader;
+import fnf.psyche.api.PsycheIdentifiers;
 import fnf.psyche.content.Identifier;
 import fnf.psyche.eventbus.DependencyContext;
 import fnf.psyche.eventbus.DependencyInjector;
@@ -37,9 +38,8 @@ class Psyche
 			mods.call("injectDependencies", [context]);
 		}
 
-		if (context.id.toString() == "psyche:fps")
+		if (context.id == PsycheIdentifiers.GAME_FPS_DISPLAY)
 		{
-			trace("HI");
 			context.value = new PsycheFpsDisplay(10, 3);
 		}
 	}

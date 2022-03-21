@@ -1,0 +1,6 @@
+./source/
+%HAXEPATH%/lib/flixel/4,10,0/flixel
+%HAXEPATH%/lib/flixel-addons/2,11,0/flixel/addons
+%HAXEPATH%/lib/interpret/0,1,4/interpret
+%HAXEPATH%/lib/flixel-ui/2,4,0/flixel/addons/ui
+%HAXEPATH%/lib/discord_rpc/git/discord_rpc

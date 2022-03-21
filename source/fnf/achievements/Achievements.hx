@@ -1,4 +1,4 @@
-package fnf;
+package fnf.achievements;
 
 import flixel.FlxG;
 import haxe.Json;

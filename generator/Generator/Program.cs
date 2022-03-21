@@ -10,25 +10,34 @@ namespace Generator
     {
         public static void Main(string[] args)
         {
-            string inputDirectory = GetInput("--input", args.ToList());
+            string inputFile = GetInput("--input", args.ToList());
             string outputFile = GetInput("--output", args.ToList());
             
-            Console.WriteLine("Input directory: " + inputDirectory);
+            Console.WriteLine("Input file: " + inputFile);
             Console.WriteLine("Output file: " + outputFile);
 
             HaxeModuleCollector collector = new();
-            DirectoryInfo dir = new(inputDirectory);
-
-            foreach (FileInfo file in dir.EnumerateFiles("**", SearchOption.AllDirectories))
+            
+            void ScanDirectory(string path)
             {
-                // EnvPopulator.hx is excluded to order to stop some issues with module loaded.
-                // Main.hx is excluded because Atlas grr + no need for people to access it I guess.
-                if (file.Extension != ".hx" || file.Name is "EnvPopulator.hx" or "Main.hx")
-                    continue;
+                DirectoryInfo dir = new(Environment.ExpandEnvironmentVariables(path));
+
+                Console.WriteLine("Generating from: " + dir.FullName);
                 
-                collector.ReadFile(file.FullName);
+                foreach (FileInfo file in dir.EnumerateFiles("**", SearchOption.AllDirectories))
+                {
+                    // EnvPopulator.hx is excluded to order to stop some issues with module loaded.
+                    // Main.hx is excluded because Atlas grr + no need for people to access it I guess.
+                    if (file.Extension != ".hx" || file.Name is "EnvPopulator.hx" or "Main.hx")
+                        continue;
+                
+                    collector.ReadFile(file.FullName);
+                }
             }
             
+            foreach (string path in File.ReadAllLines(inputFile))
+                ScanDirectory(path);
+
             // Console.WriteLine(string.Join('\n', collector.QualifiedDefinitions));
 
             WritableHaxeFile hxFile = new WritableHaxeFileBuilder()
