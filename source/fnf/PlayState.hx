@@ -34,8 +34,6 @@ import flixel.util.FlxSave;
 import flixel.util.FlxSort;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
-import fnf.Achievements;
-import fnf.Achievements;
 import fnf.DialogueBoxPsych;
 import fnf.DialogueBoxPsych;
 import fnf.DiscordClient;
@@ -44,6 +42,8 @@ import fnf.Section.SwagSection;
 import fnf.Song.SwagSong;
 import fnf.StageData;
 import fnf.StageData;
+import fnf.achievements.AchievementObject;
+import fnf.achievements.Achievements;
 import fnf.editors.CharacterEditorState;
 import fnf.editors.ChartingState;
 import haxe.Json;
@@ -1540,9 +1540,7 @@ class PlayState extends MusicBeatState
 		dialogueCount++;
 	}
 
-	function skipDialogue()
-	{
-	}
+	function skipDialogue() {}
 
 	var previousFrameTime:Int = 0;
 	var lastReportedPlayheadPosition:Int = 0;

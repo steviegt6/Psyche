@@ -33,6 +33,8 @@ class Psyche
 
 	private static function handleInjections(context:DependencyContext):Void
 	{
+		trace(context.id.toString());
+
 		for (mods in ModLoader.loadedMods)
 		{
 			mods.call("injectDependencies", [context]);

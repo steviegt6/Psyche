@@ -5,8 +5,8 @@ import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import fnf.Achievements;
 import fnf.DiscordClient;
+import fnf.achievements.Achievements;
 
 using StringTools;
 

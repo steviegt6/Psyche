@@ -71,6 +71,7 @@ class Main extends Sprite
 		skipSplash = Psyche.getDependency(PsycheIdentifiers.GAME_SKIP_SPLASH, true);
 		startFullscreen = Psyche.getDependency(PsycheIdentifiers.GAME_START_FULLSCREEN, false);
 		fpsVar = Psyche.getDependency(PsycheIdentifiers.GAME_FPS_DISPLAY, new FPS(10, 3, 0xFFFFFF));
+
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 

@@ -14,8 +14,10 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import fnf.Achievements;
 import fnf.DiscordClient;
+import fnf.achievements.AchievementObject;
+import fnf.achievements.Achievements;
+import fnf.achievements.AchievementsMenuState;
 import fnf.editors.MasterEditorMenu;
 import lime.app.Application;
 
