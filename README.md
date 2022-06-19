@@ -1,3 +1,8 @@
+# **I HAVE NO PLANS TO CONTINUE PSYCHE**
+I have *absolutely zero* plans on continuing this project. I'd rather fork the vanilla engine once the rewrite comes out instead.
+
+Powerful modding support using my probject, [dashlink](https://github.com/Steviegt6/dashlink) is planned in the future amount other things. Contact me directly if you care at all about the future of this project and anything related to it. My goal remains the say, I will just pursue it through other means.
+
 # Psyche
 _Psyche_ is a fork of [_Pysch Engine_](https://github.com/ShadowMario/FNF-PsychEngine) that focuses on extensibility and maintainability. The projet's goal is to produce a cleaner, easier-to-use, faster, and more powerful engine. A side goal is full OS parity (Windows and \*Nix operating systems should work fine together).
 
